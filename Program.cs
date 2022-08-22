@@ -4,6 +4,11 @@ namespace MyConsoleApp
 {
     class Program
     {
+        /*
+        Sample exec command:
+        dotnet run bmi --height 1.75 --weight 75
+        dotnet run bmi --weight 75 --height 1.75
+        */
         static void Main(string[] args)
         {
             Validations(args);
