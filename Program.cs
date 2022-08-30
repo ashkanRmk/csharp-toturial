@@ -23,16 +23,26 @@ namespace MyConsoleApp
             var secondSwitch = args[3];
             var secondArg = args[4];
 
-            double height = 0;
-            double weight = 0;
+            double height, weight;
+
             switch (firstSwitch)
             {
                 case "--height":
+                    if (secondSwitch != "--weight")
+                    {
+                        BadCommand();
+                        break;
+                    }
                     height = Convert.ToDouble(firstArg);
                     weight = Convert.ToDouble(secondArg);
                     CalculateBmi(height, weight);
                     break;
                 case "--weight":
+                    if (secondSwitch != "--height")
+                    {
+                        BadCommand();
+                        break;
+                    }
                     weight = Convert.ToDouble(firstArg);
                     height = Convert.ToDouble(secondArg);
                     CalculateBmi(height, weight);
